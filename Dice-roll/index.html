@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Roll</title>
+    <style>
+        * {
+            margin: 0%;
+        }
+
+        body {
+            box-sizing: border-box;
+            background-color: black;
+        }
+
+        img {
+            width: 100px;
+        }
+
+        .main {
+            margin: auto;
+            display: flex;
+            gap: 30px;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            height: 90vh;
+        }
+
+        #input {
+            width: 240px;
+            height: 80px;
+            background-color: whitesmoke;
+            border-radius: 14px;
+            text-align: center;
+            font-size: 70px;
+            align-items: center;
+        }
+
+        button {
+            width: 150px;
+            height: 50px;
+            background-color: whitesmoke;
+            border-radius: 14px;
+            border: none;
+            font-size: 18px;
+            font-family: cursive;
+            font-weight: 600;
+        }
+
+        h1 {
+            font-family: cursive;
+            color: whitesmoke;
+            font-size: 50px;
+        }
+
+        @media (min-width : 768px) {
+            img {
+                width: 130px;
+            }
+
+            .main {
+                background-color: black;
+                margin: auto;
+                display: flex;
+                gap: 50px;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 10px;
+            }
+
+            #input {
+                width: 300px;
+                height: 90px;
+                background-color: whitesmoke;
+                border-radius: 14px;
+                text-align: center;
+                font-size: 74px;
+                align-items: center;
+            }
+
+            button {
+                width: 200px;
+                height: 50px;
+                background-color: whitesmoke;
+                border-radius: 14px;
+                border: none;
+                font-size: 24px;
+                font-weight: 600;
+            }
+
+            h1 {
+                font-family: cursive;
+                color: whitesmoke;
+                font-size: 45px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div>
+            <h1>Dice Roll</h1>
+        </div>
+        <div id="input"></div>
+        <div class="image">
+            <img src="./dice.png" alt="">
+        </div>
+        <div id="dice">
+            <button onclick="generate_random_num()" id="btn">Throw Dice</button>
+        </div>
+    </div>
+    <script>
+        function random_num() {
+            let x = Math.floor(Math.random() * 7);
+            return x;
+        }
+        function generate_random_num() {
+            let box = document.getElementById("input");
+            box.textContent = random_num();
+            if (box.textContent === '6') {
+                box.style.backgroundColor = 'green';
+            }
+            else if (box.textContent === '1') {
+                box.style.backgroundColor = 'red';
+            }
+            else {
+                box.style.backgroundColor = 'white';
+            }
+        }
+    </script>
+</body>
+
+</html>
